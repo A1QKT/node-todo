@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  node-todo:
+    build: .
+    image: a1qkt/node-todo:v0.0.1
+    ports:
+      - 3000:3000
+    container_name: test1
+    volumes:
+      - ./:/app
+    

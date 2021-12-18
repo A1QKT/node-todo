@@ -1,0 +1,5 @@
+{
+    "URLEndpoint": "mongodb+srv://khoi:lovetoana1@cluster0.nealr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "UserName": "khoi",
+    "PassWord": "lovetoana1"
+}
