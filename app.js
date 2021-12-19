@@ -17,3 +17,4 @@ mongoose.connect(config.getDBConectionString());
 setupController(app);
 apiController(app);  
 app.listen(port);
+//"mongodb+srv://khoi:lovetoana1@cluster0.nealr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
