@@ -1,23 +1,43 @@
-version: "3.7"
+version: "3"
 
 services:
   node-todo:
-    build: .
-    image: a1qkt/node-todo:v0.0.1
+    image: a1qkt/node-todo:v0.0.12
     ports:
       - 3000:3000
-    container_name: test1
     volumes:
       - ./:/node-todo
+    deploy:
+  #     replicas: 3
+      restart_policy:
+        condition: on-failure
+  #       delay: 5s
+  #       max_attempts: 3
+  #       window: 120s
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 50M
+        reservations:
+          cpus: '0.25'
+          memory: 20M
+    depends_on:
+      - mongodb
 
   mongodb:
     image: mongo
-    container_name: mongo-test1
-    environment:
-      - PUID=1000 
-      - PGID=1000 
     ports:
       - 27017:27017 
     volumes: 
       - ./database:/data/db
-    restart: unless-stopped
+    # deploy: 
+    #   replicas: 1
+    #   resources:
+    #     limits:
+    #       cpus: '0.50'
+    #       memory: 50M
+    #     reservations:
+    #       cpus: '0.25'
+    #       memory: 20M
+
+

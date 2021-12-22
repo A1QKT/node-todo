@@ -1,5 +1,3 @@
 {
-    "URLEndpoint": "mongodb://mongodb:27017",
-    "UserName": "khoi",
-    "PassWord": "lovetoana1"
+    "URLEndpoint": "mongodb://mongodb:27017"
 }
